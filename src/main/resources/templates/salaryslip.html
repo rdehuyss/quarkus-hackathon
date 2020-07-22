@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Salary slip</title>
+</head>
+<body>
+<div style="clear: both; width: 100%;">
+    <div style="float:left; width: 40%">
+        <h1>ACME Corp</h1>
+        <p>Some street 3242<br/>Some city, 97438</p>
+    </div>
+    <div style="float:left">
+        <h1>Salary Slip</h1>
+    </div>
+</div>
+
+<table style="clear: both; width: 100%;">
+    <tbody>
+    <tr><td>Employee id</td><td>{context.employee.id}</td></tr>
+    <tr><td>Employee name</td><td>{context.employee.firstName} {context.employee.lastName}</td></tr>
+    <tr><td>Workweek</td><td>{context.workWeek.weekNbr}</td></tr>
+    <tr><td>Date from - to</td><td>{context.workWeek.from} - {context.workWeek.to}</td></tr>
+    </tbody>
+</table>
+<br /><br /><br /><br />
+<table>
+    <thead><tr><td>Day</td><td>Hours</td></tr></thead>
+    <tbody>
+    <tr><td>Monday</td><td>{context.workWeek.workHoursMonday}</td></tr>
+    <tr><td>Tuesday</td><td>{context.workWeek.workHoursTuesday}</td></tr>
+    <tr><td>Wednesday</td><td>{context.workWeek.workHoursWednesday}</td></tr>
+    <tr><td>Thursday</td><td>{context.workWeek.workHoursThursday}</td></tr>
+    <tr><td>Friday</td><td>{context.workWeek.workHoursFriday}</td></tr>
+    <tr><td>Total</td><td>{context.workWeek.total}</td></tr>
+    </tbody>
+</table>
+
+<br /><br /><br /><br />
+<div style="border: 1px solid black; float: right">
+    <p>&nbsp;&nbsp;&nbsp;Price/hour: {context.totalPerHour}</p>
+    <p>Total net pay: {context.total}</p>
+</div>
+</body>
+</html>
