@@ -1,4 +1,11 @@
-Problems I encountered:
+## Quarkus Hackathon
+
+This application shows a demo of how to use JobRunr together with Quarkus - it's the ideal tool for long-running background jobs.
+
+In this application, we create salary slips for all the employees of Acme Corp.  
+
+
+## Problems I encountered:
 
 ##### SerializedLambda
 JobRunr makes heavy use of Reflection and [SerializedLambda](https://docs.oracle.com/javase/8/docs/api/java/lang/invoke/SerializedLambda.html)
