@@ -19,7 +19,7 @@ The architecture is as follows:
 ### How to run
 #### Make sure the following docker containers are running:
 - `docker run -e POSTGRES_PASSWORD=Pass2020! -p 5432:5432 -d postgres`
-- `docker run -e MAX_WAIT_TIMEOUT=30 -e MAX_WAIT_TIMEOUT=30 -e DEFAULT_WAIT_TIMEOUT=30 -p 3000:3000 -d thecodingmachine/gotenberg`
+- `docker run -e MAX_WAIT_TIMEOUT=30 -e DEFAULT_WAIT_TIMEOUT=30 -p 3000:3000 -d thecodingmachine/gotenberg`
 
 #### Add JobRunr to maven
 I did some small changes to JobRunr that I first want to test further before releasing it. To make this project work, please extract the following folder to your local m2/repository folder:
