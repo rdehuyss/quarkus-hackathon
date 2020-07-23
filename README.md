@@ -1,11 +1,32 @@
 ## Quarkus Hackathon
 
-This application shows a demo of how to use JobRunr together with Quarkus - it's the ideal tool for long-running background jobs.
+This application shows a demo of how to use JobRunr together with Quarkus - it's the ideal tool for long-running background jobs in a cloud native environment.
 
 In this application, we create salary slips for all the employees of Acme Corp.  
 
+### Architecture
+The architecture is as follows:
+- we have a Postgres database in which employees are available
+- a recurring job triggers every sunday and creates a job to create and send the salary slip for each employee 
+- that salary slip job does the following:
+  - it accepts the employeeId
+  - with that employeeId it retrieves the employee from the DB 
+  - it collects the hours worked for that week from the TimeClockService
+  - an HTML document is generated using Quarkus templates
+  - that HTML document is send to Gotenberg, a microservice that converts documents to PDF's, via the RestEasy client and saved to a NAS (in this case /tmp)
+  - the PDF is then send via mail to the employee
+  
+### How to run
+#### Make sure the following docker containers are running:
+- `docker run -e POSTGRES_PASSWORD=Pass2020! -p 5432:5432 -d postgres`
+- `docker run -e MAX_WAIT_TIMEOUT=30 -e MAX_WAIT_TIMEOUT=30 -e DEFAULT_WAIT_TIMEOUT=30 -p 3000:3000 -d thecodingmachine/gotenberg`
 
-## Problems I encountered:
+#### Add JobRunr to maven
+I did some small changes to JobRunr that I first want to test further before releasing it. To make this project work, please extract the following folder to your local m2/repository folder:
+[jobrunr.zip](https://github.com/rdehuyss/quarkus-hackathon/files/4965452/m2-jobrunr.zip)
+
+
+## Problems I encountered (Todo's):
 
 ##### SerializedLambda
 JobRunr makes heavy use of Reflection and [SerializedLambda](https://docs.oracle.com/javase/8/docs/api/java/lang/invoke/SerializedLambda.html)
