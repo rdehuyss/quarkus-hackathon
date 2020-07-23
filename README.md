@@ -5,7 +5,7 @@ This application shows a demo of how to use JobRunr together with Quarkus - it's
 In this application, we create salary slips for all the employees of Acme Corp.  
 
 <p align="center">
-[![Quarkus Hackathon submission](https://img.youtube.com/vi/pemNdnEadzU/0.jpg)](https://www.youtube.com/watch?v=pemNdnEadzU)
+  <a href="https://www.youtube.com/watch?v=pemNdnEadzU"><img src="https://img.youtube.com/vi/pemNdnEadzU/hqdefault.jpg" alt="JobRunr logo"></img></a>
 </p>
 
 ### Architecture
