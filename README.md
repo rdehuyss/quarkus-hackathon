@@ -53,3 +53,6 @@ Caused by: org.apache.commons.logging.LogConfigurationException: java.lang.Class
 
 ##### JsonB works differently in native mode than in hotspot mode 
 (further analysis needed)
+
+
+sudo apt install python3-cairo python3-xlib python3-xdg gir1.2-gudev-1.0 gir1.2-gst-plugins-base-1.0 gir1.2-appindicator3-0.1 gir1.2-keybinder-3.0

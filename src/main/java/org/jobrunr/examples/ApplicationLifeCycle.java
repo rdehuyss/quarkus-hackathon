@@ -26,16 +26,13 @@ public class ApplicationLifeCycle {
 
 
     void onStart(@Observes StartupEvent ev) {
-        System.out.println("The application is starting...");
         System.out.println("Starting background job server");
         backgroundJobServer.start();
         System.out.println("Initializing job scheduler: " + jobScheduler.getClass().getName());
-        backgroundJobServer.start();
         System.out.println("Creating recurring jobs");
         BackgroundJob.scheduleRecurringly(
                 "generate-and-send-salary-slip",
-                //() -> salarySlipService.generateAndSendSalarySlipToAllEmployees(),
-                new JobDetails(salarySlipService, "generateAndSendSalarySlipToAllEmployees"),
+                () -> salarySlipService.generateAndSendSalarySlipToAllEmployees(),
                 Cron.weekly(DayOfWeek.SUNDAY, 22));
     }
 

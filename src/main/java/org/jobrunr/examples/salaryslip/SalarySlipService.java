@@ -38,7 +38,7 @@ public class SalarySlipService {
     @ActivateRequestContext
     public void generateAndSendSalarySlipToAllEmployees() {
         final Stream<Long> allEmployeeIds = Employee.streamAllIds();
-        BackgroundJob.<Long>enqueueAll(allEmployeeIds, (employeeId) -> new JobDetails(SalarySlipService.class, "generateAndSendSalarySlip", employeeId));
+        BackgroundJob.<SalarySlipService, Long>enqueue(allEmployeeIds, (salarySlipService, employeeId) -> salarySlipService.generateAndSendSalarySlip(employeeId));
     }
 
     @Job(name = "Generate and send salary slip to employee %0")
