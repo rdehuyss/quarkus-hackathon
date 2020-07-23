@@ -25,6 +25,13 @@ The architecture is as follows:
 I did some small changes to JobRunr that I first want to test further before releasing it. To make this project work, please extract the following folder to your local m2/repository folder:
 [jobrunr.zip](https://github.com/rdehuyss/quarkus-hackathon/files/4965452/m2-jobrunr.zip)
 
+### Native image
+A precompiled native image for this project is available here: [quarkus-hackathon-native-image.zip](https://github.com/rdehuyss/quarkus-hackathon/files/4965464/example-quarkus-1.0.zip)
+To run multiple instances, please start them as follows (the port is different for each instance):
+- `export QUARKUS_HTTP_PORT=8081; ./target/example-quarkus-1.0.0-SNAPSHOT-runner`
+- `export QUARKUS_HTTP_PORT=8082; ./target/example-quarkus-1.0.0-SNAPSHOT-runner`
+
+
 
 ## Problems I encountered (Todo's):
 
