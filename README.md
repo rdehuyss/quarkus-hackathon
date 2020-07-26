@@ -2,6 +2,8 @@
 
 This application shows a demo of how to use JobRunr together with Quarkus - it's the ideal tool for long-running background jobs in a cloud native environment.
 
+> My hackathon entry is about JobRunr (this is just a demo project using JobRunr on Quarkus). Please review the JobRunr code instead of this project.
+
 In this application, we create salary slips for all the employees of Acme Corp.  
 
 <p align="center">
